@@ -14,6 +14,7 @@ interface ResourcesOptions extends APIClientOptions {
     sampleAccount?: string
     symbol?: string
     url?: string
+    systemAccount?: string
 }
 
 export interface SampleUsage {
@@ -35,6 +36,10 @@ export class Resources {
     // token precision/symbol
     symbol = '4,EOS'
 
+    // the account hosting the system contract (rammarket/rexpool/powup.state tables) - some
+    // Antelope chains (e.g. VEX) rename this away from the EOS mainnet default of 'eosio'
+    systemAccount = 'eosio'
+
     constructor(options: ResourcesOptions) {
         // Allow overriding of the sample account name
         if (options.sampleAccount) {
@@ -43,6 +48,10 @@ export class Resources {
         // Allow overriding of the system token symbol
         if (options.symbol) {
             this.symbol = options.symbol
+        }
+        // Allow overriding of the system contract account
+        if (options.systemAccount) {
+            this.systemAccount = options.systemAccount
         }
         // Allow variations on how to specify the API configuration
         if (options.api) {

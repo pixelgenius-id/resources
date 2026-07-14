@@ -1,8 +1,8 @@
 {
-    "name": "@wharfkit/resources",
-    "description": "Library to assist in Antelope-blockchain resource calculations.",
+    "name": "@pixelgeniusid/resources",
+    "description": "Library to assist in Antelope-blockchain resource calculations. Fork of @wharfkit/resources with a configurable system contract account, for chains (e.g. VEX) that rename it away from eosio.",
     "version": "1.2.2",
-    "homepage": "https://github.com/wharfkit/resources",
+    "homepage": "https://github.com/pixelgenius-id/resources",
     "license": "BSD-3-Clause",
     "main": "lib/wharfkit-resources.js",
     "module": "lib/wharfkit-resources.m.js",
@@ -46,5 +46,8 @@
         "ts-node": "^9.1.0",
         "typedoc": "^0.20.25",
         "typescript": "^4.1.2"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

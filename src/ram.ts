@@ -42,8 +42,8 @@ export class RAMAPI {
 
     async get_state() {
         const response = await this.parent.api.v1.chain.get_table_rows({
-            code: 'eosio',
-            scope: 'eosio',
+            code: this.parent.systemAccount,
+            scope: this.parent.systemAccount,
             table: 'rammarket',
             type: RAMState,
         })
